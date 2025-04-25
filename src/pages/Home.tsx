@@ -81,8 +81,8 @@ const Home: React.FC = () => {
       <section id="comparison">
         <h2>Comparison with WonderJourney</h2>
         <VideoCompare
-            oursSrc="/videos/french_manor.mp4"
-            otherSrc="/videos/french_manor_WJ.mp4"
+            oursSrc="/videos/test_french_manor.mp4"
+            otherSrc="/videos/output_french_manor_WJ.mp4"
             // デフォルトラベルを使うなら以下は省略可
             // oursLabel="Ours"
             // otherLabel="WonderJourney"
