@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Gallery from '../components/Gallery';
 import VideoCompare from '../components/VideoCompare';
 const Home: React.FC = () => {
@@ -24,6 +24,31 @@ const Home: React.FC = () => {
       videoSrc: '/videos/sample_video.mp4'
     }
   ];
+  const videoPairs = [
+    {
+      otherSrc: '/videos/french_manor_WJ.mp4',
+      oursSrc: '/videos/output_french_manor_2.mp4',
+      otherLabel: 'WonderJourney',
+      oursLabel: 'Ours',  
+    },
+    {
+      otherSrc: '/videos/output_cyberpunk_2_WJ.mp4',
+      oursSrc: '/videos/output_cyberpunk_2.mp4',
+      otherLabel: 'WonderJourney',
+      oursLabel: 'Ours',
+    }
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const pairCount = videoPairs.length;
+
+  const handlePrev = () => {
+    setCurrent((current + pairCount - 1) % pairCount);
+  };
+
+  const handleNext = () => {
+    setCurrent((current + 1) % pairCount);
+  };
 
   return (
     <>
@@ -65,13 +90,42 @@ const Home: React.FC = () => {
 
       <section id="comparison">
         <h2>Comparison with WonderJourney</h2>
+
+        <button 
+          onClick={handlePrev} 
+          style={{
+            position: 'absolute',
+            left: '1rem',
+            top: '50%',
+            transform: 'translateY(-50%)'
+          }}
+          aria-label="Previous Example"
+        >◀</button>
+          {/* <VideoCompare
+              oursSrc="/videos/output_french_manor_2.mp4"
+              otherSrc="/videos/french_manor_WJ.mp4"
+              // デフォルトラベルを使うなら以下は省略可
+              // oursLabel="Ours"
+              // otherLabel="WonderJourney"
+          /> */}
         <VideoCompare
-            oursSrc="/videos/output_french_manor_2.mp4"
-            otherSrc="/videos/french_manor_WJ.mp4"
-            // デフォルトラベルを使うなら以下は省略可
-            // oursLabel="Ours"
-            // otherLabel="WonderJourney"
+          otherSrc={videoPairs[current].otherSrc}
+          oursSrc={videoPairs[current].oursSrc}
+          otherLabel={videoPairs[current].otherLabel}
+          oursLabel={videoPairs[current].oursLabel}
         />
+        <button 
+          onClick={handleNext} 
+          style={{
+            position: 'absolute',
+            right: '1rem',
+            top: '50%',
+            transform: 'translateY(-50%)'
+          }}
+          aria-label="Next Example"
+        >▶</button>
+
+
         </section>
 
       <section id="more_examples">
