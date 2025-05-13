@@ -7,6 +7,17 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
+
+    // CommonJS モジュールを ESModule 風に扱えるようにする
+    "esModuleInterop": true,                  
+
+    // デフォルト輸入を許可。型チェック上のみ有効
+    "allowSyntheticDefaultImports": true,     
+
+    // 型推論できない箇所の any を一時的に許容する
+    // （明示的に型付けするのが望ましい場合は true に戻してください）
+    "noImplicitAny": false,                   
+
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true

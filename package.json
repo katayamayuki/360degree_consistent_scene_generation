@@ -1,11 +1,14 @@
 {
   "name": "my-gallery",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://katayamayuki.github.io/360degree_consistent_scene_generation/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
