@@ -64,7 +64,7 @@ const Home: React.FC = () => {
       <section style={{ textAlign: 'center', padding: '4rem 0' }}>
         <h1>Image-Guided 360-degree Scene Generation with Structural and Visual Consistency</h1>
         <p>
-          Y. Katayama,&nbsp;R. Togo,&nbsp;K. Maeda,&nbsp;T. Ogawa,&nbsp;M. Haseyama
+          Y. Katayama,&nbsp;R. Togo,&nbsp;K. Maeda,&nbsp;T. Ogawa, and &nbsp;M. Haseyama
         </p>
         <div>
           <a className="btn" href="#paper">Paper</a>
